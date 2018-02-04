@@ -9,7 +9,7 @@ Collection of Algorithms written in the [Go Programming Language (golang)](https
 * Practical Toolkit of useful data structures and algorithms
 * Interesting ways to interact with the structures
 * Easy to summon the power of the algorithms
-* A flexible way to invoke the glorious power of *structure.algorithm(input)*
+* A flexible way to invoke the glorious power of `structure.algorithm(input)`
 * A philosopher stone to convert your input into solid gold output.
 
       >> philosopher_stone.transmute(Pb)
