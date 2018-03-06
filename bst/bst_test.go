@@ -32,12 +32,29 @@ func TestEqualTrees(t *testing.T) {
 }
 
 func TestSearch(t *testing.T) {
-
     tree1 := ExampleTree()
     branch := TreeSearch(&tree1, 8)
     PrintTreeWalk(&branch)
-
 }
 
+func TestMinMax(t *testing.T) {
+
+    tree1 := ExampleTree()
+    tree2 := ExampleTree2()
+
+    a, b := TreeMinimum(&tree1).Value, TreeMinimum(&tree2).Value
+    if a != 1 || b != 1 {
+        t.Error("Minimum of examples should be equal to 1.")
+    }
+
+    c, d := TreeMaximum(&tree1).Value, TreeMaximum(&tree2).Value
+    if c != 9 || d != 9 {
+        t.Error("Maximum of examples should be equal to 9.")
+    }
+
+    fmt.Println("Mins:", a, b,"Maxes:", c, d)
+    
+
+}
 
 // func TestSearch(t *testing.T)
