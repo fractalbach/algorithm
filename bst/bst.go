@@ -93,13 +93,6 @@ func TreeMaximum(t *Tree) Tree {
 	return *t
 }
 
-func TreeSuccessor(t *Tree) {
-	if t.Right != nil {
-		return TreeMinimum(t)
-	}
-
-}
-
 // ==========================================================================
 // Random Support Functions and Examples
 // __________________________________________________________________________
