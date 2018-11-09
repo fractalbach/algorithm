@@ -99,7 +99,6 @@ func MaxHeapifyRecursive(h heap, i int) heap {
 }
 
 func MaxHeapify(h heap, i int) heap {
-
 	for {
 		l := left(i)
 		r := right(i)
@@ -133,22 +132,32 @@ func MinHeapify(h heap, i int) heap {
 		smallest := i
 
 		// Check the left side.
-		if l <= len(h) && h[l] < h[i] {
+		if l < len(h) && h[l] < h[i] {
 			smallest = l
 		}
 
 		// Check the right side.
-		if r <= len(h) && h[r] > h[smallest] {
+		if r < len(h) && h[r] < h[smallest] {
 			smallest = r
 		}
 
 		// Check if we need another iteration.
-		if smallest != i {
-			h[i], h[smallest] = h[smallest], h[i]
-			i = smallest
-			continue
+		if smallest == i {
+			break
 		}
-		break
+		h[i], h[smallest] = h[smallest], h[i]
+		i = smallest
+		continue
+	}
+	return h
+}
+
+func BuildMinHeap(h heap) heap {
+	last := len(h) - 1
+	i := parent(last)
+	for i >= 0 {
+		h = MinHeapify(h, i)
+		i--
 	}
 	return h
 }

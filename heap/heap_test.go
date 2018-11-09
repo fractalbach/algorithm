@@ -145,7 +145,7 @@ func Test_Max_Heapify(t *testing.T) {
 func Test_Min_Heapify(t *testing.T) {
 	h := hAlmostSorted1
 	print("   before:", h)
-	h = MinHeapify(h, 1)
+	h = BuildMinHeap(h)
 	print("   after:", h)
 
 	// Confirm that MinHeapify worked.
